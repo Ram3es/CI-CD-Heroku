@@ -9,7 +9,7 @@ RUN npm run build
 
 FROM nginx
 
-COPY ./deoly/default.conf.template /etc/nginx/conf.d/default.conf.template
+COPY ./deploy/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build-stage /app/build /usr/share/nginx/html
