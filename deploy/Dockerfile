@@ -12,7 +12,7 @@ FROM nginx
 COPY ./deploy/nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build-stage /app/build /usr/share/nginx/html
-COPY docker-entrypoint.sh /
+COPY ./deploy/docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
