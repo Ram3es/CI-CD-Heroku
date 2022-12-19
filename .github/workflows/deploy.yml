@@ -36,4 +36,4 @@ jobs:
           docker tag $IMAGE_NAME registry.heroku.com/$HEROKU_APP_NAME/web
           docker push registry.heroku.com/$HEROKU_APP_NAME/web
           heroku container:release -a $HEROKU_APP_NAME web
-          heroku open
+          heroku open -a $HEROKU_APP_NAME
